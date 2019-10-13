@@ -169,6 +169,7 @@ export default class ConfirmationCodeInput extends Component {
       inactiveColor,
       space,
       activeBackgroundColor,
+      inactiveBackgroundColor,
     } = this.props;
     let classStyle = {
       ...this._getInputSpaceStyle(space),
@@ -177,6 +178,8 @@ export default class ConfirmationCodeInput extends Component {
 
     if (activeBackgroundColor && value) {
       classStyle.backgroundColor = activeBackgroundColor;
+    } else {
+      classStyle.backgroundColor = inactiveBackgroundColor || 'transparent';
     }
 
     switch (className) {
